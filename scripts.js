@@ -44,6 +44,8 @@ function toggleInConfig(optionToToggle) {
   }
   console.log(passwordConfig);
 }
+passwordNumbersInputEl.addEventListener("click", () => toggleInConfig("numbers"));
+passwordSymbolsInputEl.addEventListener("click", () => toggleInConfig("symbols"));
 
 /**
  * Updates the password length in the password configuration object
@@ -53,7 +55,7 @@ function updatePasswordLengthInConfig() {
   passwordConfig.length = passwordLengthEl.value;
   console.log(passwordConfig);
 }
-passwordLengthEl.addEventListener("input", updatePasswordLengthInConfig);
+passwordLengthEl.addEventListener("input", () => updatePasswordLengthInConfig());
 
 /**
  * Generates a password based on the password configuration object
