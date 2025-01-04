@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Password Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="card">
+      <h1 class="card-title">Generate a <span>random password</span></h1>
+      <p class="card-lead">Never use an insecure password again.</p>
+      <fieldset>
+        <legend>Password Configuration</legend>
+        <div class="password-length-container">
+          <input
+            class="input-number"
+            type="number"
+            placeholder="15"
+            id="password-length-el"
+            min="10"
+            max="20"
+            value="15"
+          />
+          <label for="password-length-el"> Password Length </label>
+        </div>
+        <label for="password-symbols-el" class="checkmark-container"
+          >Include Symbols
+          <input
+            type="checkbox"
+            id="password-symbols-el"
+            onclick="toggleInConfig('symbols')"
+          /><span class="checkmark"></span> </label
+        ><br />
+        <label for="password-numbers-el" class="checkmark-container"
+          >Include Numbers
+          <input
+            type="checkbox"
+            id="password-numbers-el"
+            onclick="toggleInConfig('numbers')"
+          /><span class="checkmark"></span>
+        </label>
+      </fieldset>
+      <button class="btn">Generate passwords</button>
+      <div class="generated-passwords-container">
+        <input class="input-text" type="text" id="password-one" readonly />
+        <input class="input-text" type="text" id="password-two" readonly />
+      </div>
+    </main>
+    <script src="scripts.js"></script>
+  </body>
+</html>
