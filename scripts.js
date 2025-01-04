@@ -54,3 +54,31 @@ function updatePasswordLengthInConfig() {
   console.log(passwordConfig);
 }
 
+/**
+ * Generates a password based on the password configuration object
+ */
+function generatePassword() {
+  let passwordCharacters = [];
+  if (passwordConfig.letters) {
+    passwordCharacters = passwordCharacters.concat(characters.letters);
+  }
+  if (passwordConfig.numbers) {
+    passwordCharacters = passwordCharacters.concat(characters.numbers);
+  }
+  if (passwordConfig.symbols) {
+    passwordCharacters = passwordCharacters.concat(characters.symbols);
+  }
+
+  for (let i = 0; i < passwordConfig.length; i++) {
+    let randomIndex = Math.floor(Math.random() * passwordCharacters.length);
+    passwordConfig.passwordOne += passwordCharacters[randomIndex];
+  }
+  for (let i = 0; i < passwordConfig.length; i++) {
+    let randomIndex = Math.floor(Math.random() * passwordCharacters.length);
+    passwordConfig.passwordTwo += passwordCharacters[randomIndex];
+  }
+  passwordOutputOneEl.value = passwordConfig.passwordOne;
+  passwordOutputTwoEl.value = passwordConfig.passwordTwo;
+  // console.log(passwordConfig);
+}
+
