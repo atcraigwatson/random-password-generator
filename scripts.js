@@ -19,3 +19,12 @@ const passwordConfig = {
 };
 console.log(passwordConfig);
 
+// Function to toggle the checkbox
+function toggleInConfig(optionToToggle) {
+  if (optionToToggle === "numbers") {
+    passwordConfig.numbers = !passwordConfig.numbers;
+  } else if (optionToToggle === "symbols") {
+    passwordConfig.symbols = !passwordConfig.symbols;
+  }
+  console.log(passwordConfig);
+}
