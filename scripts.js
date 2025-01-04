@@ -26,6 +26,7 @@ const characters = {
 const passwordLengthEl = document.getElementById("password-length-el");
 const passwordNumbersInputEl = document.getElementById("password-numbers-el");
 const passwordSymbolsInputEl = document.getElementById("password-symbols-el");
+const passwordGenerateBtn = document.getElementById("password-generate-btn");
 const passwordOutputOneEl = document.getElementById("password-output-one-el");
 const passwordOutputTwoEl = document.getElementById("password-output-two-el");
 const passwordOutputOneBtn = document.getElementById("password-output-one-btn");
@@ -86,6 +87,7 @@ function generatePassword() {
   passwordOutputTwoEl.value = passwordConfig.passwordTwo;
   // console.log(passwordConfig);
 }
+passwordGenerateBtn.addEventListener("click", () => generatePassword());
 
 function removeClassesAfterDisplay(status) {
   setTimeout(() => {
