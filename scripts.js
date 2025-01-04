@@ -89,3 +89,50 @@ function removeClassesAfterDisplay(status) {
   }, 3000);
 }
 
+/**
+ * Copies the password to the clipboard.
+ * From MDN - https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/writeText
+ * If both password fields are empty, it shows an error message.
+ * If a password is available, it copies the first non-empty password to the clipboard
+ * and shows a success message.
+ */
+function copyPassword() {
+  const passwordOne = passwordOutputOneEl.value;
+  const passwordTwo = passwordOutputTwoEl.value;
+
+  if (!passwordOne && !passwordTwo) {
+    passwordAlertEl.textContent = "No password to copy";
+    passwordAlertEl.classList.add("error", "active");
+    removeClassesAfterDisplay("error");
+  } else {
+    /**
+     * Writes the given text to the clipboard.
+     * @param {string} text - The text to be copied to the clipboard.
+     */
+    async function writeClipboardText(text) {
+      try {
+        await navigator.clipboard.writeText(text);
+        passwordAlertEl.textContent = "Password copied to clipboard";
+        passwordAlertEl.classList.add("success", "active");
+        removeClassesAfterDisplay("success");
+      } catch (error) {
+        console.error(error.message);
+        passwordAlertEl.textContent = "Failed to copy password";
+        passwordAlertEl.classList.add("error", "active");
+      }
+    }
+
+    // Copy the first non-empty password
+    if (passwordOne) {
+      writeClipboardText(passwordOne);
+    } else {
+      writeClipboardText(passwordTwo);
+    }
+  }
+}
+
+/**
+ * Adds an event listener to the button to copy the password when clicked.
+ */
+passwordOutputOneBtn.addEventListener("click", () => copyPassword(passwordOutputOneEl.value));
+passwordOutputTwoBtn.addEventListener("click", () => copyPassword(passwordOutputTwoEl.value));
