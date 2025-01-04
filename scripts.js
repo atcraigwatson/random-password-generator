@@ -9,3 +9,13 @@ const characters = {
 let passwordLengthEl = document.getElementById("password-length-el");
 let passwordNumbersInputEl = document.getElementById("password-numbers-el");
 let passwordSymbolsInputEl = document.getElementById("password-symbols-el");
+
+// Get options from password config section
+const passwordConfig = {
+  length: passwordLengthEl.value,
+  letters: true,
+  numbers: false,
+  symbols: false,
+};
+console.log(passwordConfig);
+
