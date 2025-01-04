@@ -82,3 +82,10 @@ function generatePassword() {
   // console.log(passwordConfig);
 }
 
+function removeClassesAfterDisplay(status) {
+  setTimeout(() => {
+    passwordAlertEl.classList.remove(status, "active");
+    passwordAlertEl.textContent = "";
+  }, 3000);
+}
+
