@@ -53,6 +53,7 @@ function updatePasswordLengthInConfig() {
   passwordConfig.length = passwordLengthEl.value;
   console.log(passwordConfig);
 }
+passwordLengthEl.addEventListener("input", updatePasswordLengthInConfig);
 
 /**
  * Generates a password based on the password configuration object
