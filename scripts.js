@@ -28,3 +28,13 @@ function toggleInConfig(optionToToggle) {
   }
   console.log(passwordConfig);
 }
+
+/**
+ * Updates the password length in the password configuration object
+ * when the user changes the password length in the form.
+ */
+function updatePasswordLengthInConfig() {
+  passwordConfig.length = passwordLengthEl.value;
+  console.log(passwordConfig);
+}
+
