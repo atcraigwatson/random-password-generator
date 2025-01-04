@@ -1,3 +1,17 @@
+/**
+ * Set options for password configuration
+ * This will be updated based on user input from the password configuration form
+ */
+const passwordConfig = {
+  length: 15,
+  letters: true,
+  numbers: false,
+  symbols: false,
+  passwordOne: "",
+  passwordTwo: "",
+};
+// console.log(passwordConfig);
+
 // prettier-ignore
 const characters = {
   letters: ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],
