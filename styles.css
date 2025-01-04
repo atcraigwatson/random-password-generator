@@ -93,15 +93,58 @@ body {
 .generated-passwords-container {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 6%;
   margin-top: 40px;
   padding-top: 40px;
   border-top: 1px solid var(--base-blue);
 }
 
-.generated-passwords-container .input-text,
-.generated-passwords-container .input-number {
+.generated-passwords-container .input-group {
   width: 47%;
+  display: flex;
+}
+
+.generated-passwords-container .input-text {
+  width: 80%;
+  font-size: 0.8rem;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.generated-passwords-container .btn {
+  width: 20%;
+  margin-top: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.generated-passwords-alerts {
+  width: 100%;
+  transition-duration: 0.3s;
+}
+
+.generated-passwords-alerts.active {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: var(--border-radius);
+  font-weight: 700;
+}
+
+.generated-passwords-alerts.error {
+  color: #e11d48;
+  background-color: #ffe4e6;
+}
+.generated-passwords-alerts.warning {
+  color: #d97706;
+  background-color: #fef3c7;
+}
+.generated-passwords-alerts.success {
+  color: var(--base-green);
+  background-color: #d1fae5;
 }
 
 .input-text,
