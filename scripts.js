@@ -33,7 +33,10 @@ const passwordOutputOneBtn = document.getElementById("password-output-one-btn");
 const passwordOutputTwoBtn = document.getElementById("password-output-two-btn");
 const passwordAlertEl = document.getElementById("password-alert-el");
 
-// Function to toggle the checkbox
+/**
+ * Updates the numbers and symbols options in the password configuration object
+ * when the user toggles the numbers or symbols options in the form.
+ */
 function toggleInConfig(optionToToggle) {
   if (optionToToggle === "numbers") {
     passwordConfig.numbers = !passwordConfig.numbers;
