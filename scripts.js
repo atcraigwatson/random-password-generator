@@ -59,6 +59,8 @@ function updatePasswordLengthInConfig() {
  */
 function generatePassword() {
   let passwordCharacters = [];
+  passwordConfig.passwordOne = "";
+  passwordConfig.passwordTwo = "";
   if (passwordConfig.letters) {
     passwordCharacters = passwordCharacters.concat(characters.letters);
   }
