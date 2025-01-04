@@ -1,0 +1,228 @@
+/* Set our root variables */
+:root {
+  /* Base colors */
+  --black: #1c1c1c;
+  --white: #fefefe;
+  --dark-blue: #1f2937;
+  --base-blue: #273549;
+  --base-green: #10b981;
+  --dark-green: #5def92;
+  --light-green: #ecfdf5;
+  --dark-grey: #6b7280;
+  --light-grey: #d5d4d8;
+
+  /* Fonts */
+  --font-family-headings: "Karla", serif;
+  --font-family-body: "Inter", serif;
+
+  /* Borders */
+  --border-radius: 6px;
+
+  /* Theme colors that can be updates with JS (default is dark)*/
+  --body-bg: var(--black);
+  --body-color: var(--white);
+  --card-bg: var(--dark-blue);
+  --card-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  --card-title-color: var(--white);
+  --card-title-span-color: var(--base-green);
+  --btn-bg: var(--base-green);
+  --btn-color: var(--white);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--body-bg);
+  color: var(--body-color);
+  font-family: var(--font-family-body);
+  font-weight: 300;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  max-width: 550px;
+  padding: 50px;
+  margin: 64px auto;
+  background-color: var(--card-bg);
+  box-shadow: var(--card-shadow);
+}
+
+.card-title {
+  margin: 0;
+  color: var(--card-title-color);
+  font-family: var(--font-family-headings);
+  font-size: 2.5rem;
+  font-weight: 900;
+  line-height: 2.5rem;
+}
+
+.card-title > span {
+  display: block;
+  color: var(--card-title-span-color);
+}
+
+.card-lead {
+  color: var(--light-grey);
+  font-size: 1.25rem;
+  margin-top: 20px;
+}
+
+.btn {
+  align-self: start;
+  padding: 10px 18px;
+  margin-top: 40px;
+  color: var(--btn-color);
+  background-color: var(--btn-bg);
+  border: none;
+  border-radius: var(--border-radius);
+}
+
+.btn:hover {
+  cursor: pointer;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 1);
+}
+
+.btn:active {
+  cursor: pointer;
+  box-shadow: inset 0 4px 4px rgba(0, 0, 0, 1);
+}
+
+.generated-passwords-container {
+  display: flex;
+  justify-content: center;
+  gap: 6%;
+  margin-top: 40px;
+  padding-top: 40px;
+  border-top: 1px solid var(--base-blue);
+}
+
+.generated-passwords-container .input-text,
+.generated-passwords-container .input-number {
+  width: 47%;
+}
+
+.input-text,
+.input-number {
+  padding: 8px 14px;
+  color: var(--dark-green);
+  line-height: 1;
+  background-color: var(--base-blue);
+  border: none;
+  border-radius: var(--border-radius);
+}
+
+.input-text:focus,
+.input-number:focus {
+  outline: 2px solid var(--base-green);
+}
+
+fieldset {
+  padding: 40px 20px;
+  border: 2px solid var(--base-blue);
+}
+
+legend {
+  padding: 5px 10px;
+  color: var(--white);
+  font-size: 1.25rem;
+  background-color: var(--base-green);
+}
+
+label {
+  display: block;
+}
+
+.password-length-container {
+  display: flex;
+  margin-bottom: 25px;
+}
+
+.password-length-container label {
+  align-self: center;
+}
+
+.password-length-container input[type="number"] {
+  max-width: 100px;
+  margin-right: 10px;
+  background-color: var(--base-blue);
+  border: none;
+  padding: 6px 12px 6px 6px;
+  color: var(--light-grey);
+}
+
+.password-length-container input[type="number"]::placeholder {
+  color: var(--dark-grey);
+  opacity: 1; /* Firefox */
+}
+
+/* Customize the label (the container) */
+.checkmark-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  padding-top: 4px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.checkmark-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: var(--base-blue);
+}
+
+/* On mouse-over, add a grey background color */
+.checkmark-container:hover input ~ .checkmark {
+  background-color: var(--base-green);
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkmark-container input:checked ~ .checkmark {
+  background-color: var(--base-green);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkmark-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkmark-container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
