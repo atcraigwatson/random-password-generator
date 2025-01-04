@@ -21,19 +21,17 @@ const characters = {
 };
 // console.log(characters);
 
-// Get elements
-let passwordLengthEl = document.getElementById("password-length-el");
-let passwordNumbersInputEl = document.getElementById("password-numbers-el");
-let passwordSymbolsInputEl = document.getElementById("password-symbols-el");
-
-// Get options from password config section
-const passwordConfig = {
-  length: passwordLengthEl.value,
-  letters: true,
-  numbers: false,
-  symbols: false,
-};
-console.log(passwordConfig);
+/**
+ * Get the elements from the DOM
+ */
+const passwordLengthEl = document.getElementById("password-length-el");
+const passwordNumbersInputEl = document.getElementById("password-numbers-el");
+const passwordSymbolsInputEl = document.getElementById("password-symbols-el");
+const passwordOutputOneEl = document.getElementById("password-output-one-el");
+const passwordOutputTwoEl = document.getElementById("password-output-two-el");
+const passwordOutputOneBtn = document.getElementById("password-output-one-btn");
+const passwordOutputTwoBtn = document.getElementById("password-output-two-btn");
+const passwordAlertEl = document.getElementById("password-alert-el");
 
 // Function to toggle the checkbox
 function toggleInConfig(optionToToggle) {
