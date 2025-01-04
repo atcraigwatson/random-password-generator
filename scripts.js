@@ -4,3 +4,8 @@ const characters = {
   numbers: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"],
   specials: ["~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","=","{","[","}","]",",","|",":",";","<",">",".","?", "/",],
 };
+
+// Get elements
+let passwordLengthEl = document.getElementById("password-length-el");
+let passwordNumbersInputEl = document.getElementById("password-numbers-el");
+let passwordSymbolsInputEl = document.getElementById("password-symbols-el");
