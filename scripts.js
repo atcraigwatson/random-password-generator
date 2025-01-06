@@ -99,15 +99,13 @@ function removeClassesAfterDisplay(status) {
 /**
  * Copies the password to the clipboard.
  * From MDN - https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/writeText
- * If both password fields are empty, it shows an error message.
- * If a password is available, it copies the first non-empty password to the clipboard
+ * If password fields are empty, it shows an error message.
+ * If a password is available, it copies the password to the clipboard
  * and shows a success message.
+ * @param {string} password - The password to be copied to the clipboard.
  */
-function copyPassword() {
-  const passwordOne = passwordOutputOneEl.value;
-  const passwordTwo = passwordOutputTwoEl.value;
-
-  if (!passwordOne && !passwordTwo) {
+function copyPassword(password) {
+  if (!password) {
     passwordAlertEl.textContent = "No password to copy";
     passwordAlertEl.classList.add("error", "active");
     removeClassesAfterDisplay("error");
@@ -129,12 +127,7 @@ function copyPassword() {
       }
     }
 
-    // Copy the first non-empty password
-    if (passwordOne) {
-      writeClipboardText(passwordOne);
-    } else {
-      writeClipboardText(passwordTwo);
-    }
+    writeClipboardText(password);
   }
 }
 
