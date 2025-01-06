@@ -36,6 +36,8 @@ const passwordAlertEl = document.getElementById("password-alert-el");
 /**
  * Updates the numbers and symbols options in the password configuration object
  * when the user toggles the numbers or symbols options in the form.
+ * passwordConfig.numbers = !passwordConfig.numbers; is a toggle operation
+ * that changes the value of passwordConfig.numbers to the opposite of what it was.
  */
 function toggleInConfig(optionToToggle) {
   if (optionToToggle === "numbers") {
